@@ -5,7 +5,7 @@ from enum import Enum
 from speakeasy_client_sdk_python import utils
 from speakeasy_client_sdk_python._hooks import HookContext
 from speakeasy_client_sdk_python.models import errors, operations, shared
-from speakeasy_client_sdk_python.types import BaseModel, OptionalNullable, UNSET
+from speakeasy_client_sdk_python.types import BaseModel, OptionalNullable, SDKError, UNSET
 from typing import Optional, Union, cast
 
 class GetBlobAcceptEnum(str, Enum):
@@ -88,12 +88,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/octet-stream"):
             return operations.GetBlobResponse(blob=http_res, status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetBlobResponse(error=utils.unmarshal_json(utils.stream_to_text(http_res), Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -165,12 +165,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/octet-stream"):
             return operations.GetBlobResponse(blob=http_res, status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetBlobResponse(error=utils.unmarshal_json(utils.stream_to_text(http_res), Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -241,12 +241,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/vnd.oci.image.manifest.v1+json"):
             return operations.GetManifestResponse(manifest=utils.unmarshal_json(http_res.text, Optional[shared.Manifest]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetManifestResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -317,12 +317,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/vnd.oci.image.manifest.v1+json"):
             return operations.GetManifestResponse(manifest=utils.unmarshal_json(http_res.text, Optional[shared.Manifest]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetManifestResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -384,12 +384,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetNamespacesResponse(get_namespaces_response=utils.unmarshal_json(http_res.text, Optional[shared.GetNamespacesResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetNamespacesResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -451,12 +451,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetNamespacesResponse(get_namespaces_response=utils.unmarshal_json(http_res.text, Optional[shared.GetNamespacesResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetNamespacesResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -524,12 +524,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetOASSummaryResponse(oas_summary=utils.unmarshal_json(http_res.text, Optional[shared.OASSummary]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetOASSummaryResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -597,12 +597,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetOASSummaryResponse(oas_summary=utils.unmarshal_json(http_res.text, Optional[shared.OASSummary]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetOASSummaryResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -670,12 +670,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetRevisionsResponse(get_revisions_response=utils.unmarshal_json(http_res.text, Optional[shared.GetRevisionsResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRevisionsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -743,12 +743,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetRevisionsResponse(get_revisions_response=utils.unmarshal_json(http_res.text, Optional[shared.GetRevisionsResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRevisionsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -816,12 +816,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetTagsResponse(get_tags_response=utils.unmarshal_json(http_res.text, Optional[shared.GetTagsResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetTagsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -889,12 +889,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetTagsResponse(get_tags_response=utils.unmarshal_json(http_res.text, Optional[shared.GetTagsResponse]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetTagsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -964,12 +964,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "*"):
             return operations.PostTagsResponse(status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PostTagsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -1039,12 +1039,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "*"):
             return operations.PostTagsResponse(status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PostTagsResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -1114,12 +1114,12 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.PreflightResponse(preflight_token=utils.unmarshal_json(http_res.text, Optional[shared.PreflightToken]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PreflightResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -1189,11 +1189,11 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.PreflightResponse(preflight_token=utils.unmarshal_json(http_res.text, Optional[shared.PreflightToken]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, ["4XX","5XX"], "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PreflightResponse(error=utils.unmarshal_json(http_res.text, Optional[errors.Error]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     

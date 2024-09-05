@@ -50,10 +50,9 @@ if res.signed_access is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_linting_report_signed_url
 
@@ -94,10 +93,9 @@ if res.signed_access is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## upload_report
 
@@ -142,6 +140,6 @@ if res.uploaded_report is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| types.SDKError  | 4XX, 5XX        | \*/\*           |

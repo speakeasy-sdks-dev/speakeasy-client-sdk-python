@@ -51,10 +51,9 @@ if res.postman_collection is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_request_from_event_log
 
@@ -95,10 +94,9 @@ if res.unbounded_request is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## query_event_log
 
@@ -138,6 +136,6 @@ if res.bounded_requests is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| types.SDKError  | 4XX, 5XX        | \*/\*           |

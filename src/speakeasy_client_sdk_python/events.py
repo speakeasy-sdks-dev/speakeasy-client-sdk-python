@@ -4,7 +4,7 @@ from .basesdk import BaseSDK
 from speakeasy_client_sdk_python import utils
 from speakeasy_client_sdk_python._hooks import HookContext
 from speakeasy_client_sdk_python.models import errors, operations, shared
-from speakeasy_client_sdk_python.types import BaseModel, OptionalNullable, UNSET
+from speakeasy_client_sdk_python.types import BaseModel, OptionalNullable, SDKError, UNSET
 from typing import Any, List, Optional, Union, cast
 
 class Events(BaseSDK):
@@ -80,13 +80,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetWorkspaceEventsByTargetResponse(cli_event_batch=utils.unmarshal_json(http_res.text, Optional[List[shared.CliEvent]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -159,13 +159,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetWorkspaceEventsByTargetResponse(cli_event_batch=utils.unmarshal_json(http_res.text, Optional[List[shared.CliEvent]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -238,13 +238,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetWorkspaceTargetsResponse(target_sdk_list=utils.unmarshal_json(http_res.text, Optional[List[shared.TargetSDK]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -317,13 +317,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.GetWorkspaceTargetsResponse(target_sdk_list=utils.unmarshal_json(http_res.text, Optional[List[shared.TargetSDK]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -400,13 +400,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "2XX", "*"):
             return operations.PostWorkspaceEventsResponse(status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -483,13 +483,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "2XX", "*"):
             return operations.PostWorkspaceEventsResponse(status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -562,13 +562,13 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.SearchWorkspaceEventsResponse(cli_event_batch=utils.unmarshal_json(http_res.text, Optional[List[shared.CliEvent]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     
     
@@ -641,12 +641,12 @@ class Events(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return operations.SearchWorkspaceEventsResponse(cli_event_batch=utils.unmarshal_json(http_res.text, Optional[List[shared.CliEvent]]), status_code=http_res.status_code, content_type=http_res.headers.get("Content-Type") or "", raw_response=http_res)
         if utils.match_response(http_res, "4XX", "*"):
-            raise errors.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
+            raise SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
         if utils.match_response(http_res, "5XX", "application/json"):
             data = utils.unmarshal_json(http_res.text, errors.ErrorData)
             raise errors.Error(data=data)
         
         content_type = http_res.headers.get("Content-Type")
-        raise errors.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        raise SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
 
     

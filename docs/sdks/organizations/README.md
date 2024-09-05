@@ -46,10 +46,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_organization
 
@@ -90,10 +89,9 @@ if res.organization is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_organization_usage
 
@@ -131,10 +129,9 @@ if res.organization_usage_response is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_organizations
 
@@ -172,6 +169,6 @@ if res.organizations is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| types.SDKError  | 4XX, 5XX        | \*/\*           |

@@ -57,10 +57,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## download_schema
 
@@ -102,10 +101,9 @@ if res.two_hundred_application_json_schema is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## download_schema_revision
 
@@ -148,10 +146,9 @@ if res.two_hundred_application_json_schema is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_schema
 
@@ -194,10 +191,9 @@ if res.schema_ is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_schema_diff
 
@@ -241,10 +237,9 @@ if res.schema_diff is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_schema_revision
 
@@ -288,10 +283,9 @@ if res.schema_ is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## get_schemas
 
@@ -334,10 +328,9 @@ if res.classes is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| types.SDKError  | 4XX, 5XX        | \*/\*           |
 
 ## register_schema
 
@@ -386,6 +379,6 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Exception Class | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| types.SDKError  | 4XX, 5XX        | \*/\*           |

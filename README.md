@@ -220,18 +220,29 @@ asyncio.run(main())
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+By default, an API error will raise the `types.SDKError` exception, which has the following properties:
 
-| Error Object     | Status Code      | Content Type     |
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+In addition, when custom error responses are specified for an operation, the SDK may also raise their associated exception. For example, the `get_workspace_events_by_target_async` method may raise the following errors:
+
+| Exception Class  | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 5XX              | application/json |
-| errors.SDKError  | 4xx-5xx          | */*              |
+| types.SDKError   | 4XX              | \*/\*            |
 
 ### Example
 
 ```python
 from speakeasy_client_sdk_python import Speakeasy
 from speakeasy_client_sdk_python.models import errors, shared
+from speakeasy_client_sdk_python.types import SDKError
 
 s = Speakeasy(
     security=shared.Security(
@@ -252,8 +263,8 @@ try:
 except errors.Error as e:
     # handle e.data: errors.ErrorData
     raise(e)
-except errors.SDKError as e:
-    # handle exception
+except SDKError as e:
+    # Default API Error
     raise(e)
 ```
 <!-- End Error Handling [errors] -->

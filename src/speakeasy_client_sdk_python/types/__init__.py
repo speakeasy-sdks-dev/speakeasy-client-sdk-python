@@ -10,7 +10,35 @@ from .basemodel import (
     UNSET_SENTINEL,
 )
 
+from .errors import (
+    APIConnectionError,
+    SDKError,
+    BadRequestError,
+    UnauthorizedError,
+    ForbiddenError,
+    NotFoundError,
+    MethodNotAllowedError,
+    UnprocessableEntityError,
+    RateLimitError,
+    InternalServerError,
+    BadGatewayError,
+    ServiceUnavailableError,
+    get_api_error,
+)
+
 __all__ = [
+    "APIConnectionError",
+    "SDKError",
+    "BadRequestError",
+    "UnauthorizedError",
+    "ForbiddenError",
+    "NotFoundError",
+    "MethodNotAllowedError",
+    "UnprocessableEntityError",
+    "RateLimitError",
+    "InternalServerError",
+    "BadGatewayError",
+    "ServiceUnavailableError",
     "BaseModel",
     "Nullable",
     "OptionalNullable",
@@ -18,4 +46,5 @@ __all__ = [
     "UnrecognizedStr",
     "UNSET",
     "UNSET_SENTINEL",
+    "get_api_error",
 ]

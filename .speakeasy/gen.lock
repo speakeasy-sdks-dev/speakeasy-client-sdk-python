@@ -4,9 +4,9 @@ management:
   docChecksum: ef34c7c9a8d7b40707eaed604ee75276
   docVersion: 0.4.0 .
   speakeasyVersion: internal
-  generationVersion: 2.410.1
+  generationVersion: 2.410.0
   releaseVersion: 7.0.0-rc.1
-  configChecksum: 352cb880812185e4b20ae9e7ae20962a
+  configChecksum: d0aee2c66b708da77ea7370252b2484f
   repoURL: https://github.com/speakeasy-api/speakeasy-client-sdk-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-api/speakeasy-client-sdk-python.git
@@ -67,6 +67,7 @@ generatedFiles:
   - src/speakeasy_client_sdk_python/py.typed
   - src/speakeasy_client_sdk_python/types/__init__.py
   - src/speakeasy_client_sdk_python/types/basemodel.py
+  - src/speakeasy_client_sdk_python/types/errors.py
   - src/speakeasy_client_sdk_python/utils/__init__.py
   - src/speakeasy_client_sdk_python/utils/annotations.py
   - src/speakeasy_client_sdk_python/utils/enums.py
@@ -82,7 +83,6 @@ generatedFiles:
   - src/speakeasy_client_sdk_python/utils/serializers.py
   - src/speakeasy_client_sdk_python/utils/url.py
   - src/speakeasy_client_sdk_python/utils/values.py
-  - src/speakeasy_client_sdk_python/models/errors/sdkerror.py
   - src/speakeasy_client_sdk_python/models/operations/deleteapi.py
   - src/speakeasy_client_sdk_python/models/operations/generateopenapispec.py
   - src/speakeasy_client_sdk_python/models/operations/generatepostmancollection.py
@@ -768,6 +768,7 @@ examples:
   suggestOperationIDs:
     speakeasy-default-suggest-operation-I-ds:
       parameters:
+        query: {}
         header:
           x-session-id: "<value>"
       requestBody:

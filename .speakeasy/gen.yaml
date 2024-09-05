@@ -17,8 +17,10 @@ python:
   authors:
     - Speakeasy
   clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKError
   description: Speakeasy API Client SDK for Python
   enumFormat: enum
+  explicitErrors: false
   flattenGlobalSecurity: false
   flattenRequests: false
   imports:

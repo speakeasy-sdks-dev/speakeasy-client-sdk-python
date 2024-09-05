@@ -4,7 +4,7 @@ from .sdkconfiguration import SDKConfiguration
 import httpx
 from speakeasy_client_sdk_python import utils
 from speakeasy_client_sdk_python._hooks import AfterErrorContext, AfterSuccessContext, BeforeRequestContext
-from speakeasy_client_sdk_python.models import errors
+from speakeasy_client_sdk_python.types import SDKError
 from speakeasy_client_sdk_python.utils import RetryConfig, SerializedRequestBody, get_body_content
 from typing import Callable, List, Optional, Tuple
 
@@ -143,7 +143,7 @@ class BaseSDK:
 
             if http_res is None:
                 logger.debug("Raising no response SDK error")
-                raise errors.SDKError("No response received")
+                raise SDKError("No response received")
 
             logger.debug(
                 "Response:\nStatus Code: %s\nURL: %s\nHeaders: %s\nBody: %s",
@@ -164,8 +164,7 @@ class BaseSDK:
                     http_res = result
                 else:
                     logger.debug("Raising unexpected SDK error")
-                    raise errors.SDKError("Unexpected error occurred")
-
+                    raise SDKError("Unexpected error occurred")
             return http_res
 
         if retry_config is not None:
@@ -214,7 +213,7 @@ class BaseSDK:
 
             if http_res is None:
                 logger.debug("Raising no response SDK error")
-                raise errors.SDKError("No response received")
+                raise SDKError("No response received")
 
             logger.debug(
                 "Response:\nStatus Code: %s\nURL: %s\nHeaders: %s\nBody: %s",
@@ -235,7 +234,7 @@ class BaseSDK:
                     http_res = result
                 else:
                     logger.debug("Raising unexpected SDK error")
-                    raise errors.SDKError("Unexpected error occurred")
+                    raise SDKError("Unexpected error occurred")
 
             return http_res
 
