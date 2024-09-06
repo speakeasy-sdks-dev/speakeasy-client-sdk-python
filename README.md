@@ -1,14 +1,47 @@
 # speakeasy-client-sdk-python
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Speakeasy API: The Speakeasy API allows teams to manage common operations with their APIs
+
+For more information about the API: [The Speakeasy Platform Documentation](/docs)
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Global Parameters](#global-parameters)
+* [File uploads](#file-uploads)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install speakeasy-client-sdk-python
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add speakeasy-client-sdk-python
 ```
@@ -29,7 +62,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.apis.get_apis()
 
@@ -210,20 +242,19 @@ s = Speakeasy(
 res = None
 try:
     res = s.events.get_workspace_events_by_target(request={
-    "target_id": "<value>",
-})
+        "target_id": "<value>",
+    })
+
+    if res.cli_event_batch is not None:
+        # handle response
+        pass
 
 except errors.Error as e:
-    # handle exception
+    # handle e.data: errors.ErrorData
     raise(e)
 except errors.SDKError as e:
     # handle exception
     raise(e)
-
-if res.cli_event_batch is not None:
-    # handle response
-    pass
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -253,7 +284,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.apis.delete_api(request={
     "api_id": "<value>",
     "version_id": "<value>",
@@ -279,7 +309,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.apis.delete_api(request={
     "api_id": "<value>",
@@ -401,7 +430,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.apis.delete_api(request={
     "api_id": "<value>",
     "version_id": "<value>",
@@ -443,7 +471,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.workspaces.get_workspace()
 
 if res.workspace is not None:
@@ -470,7 +497,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.apis.delete_api(request={
     "api_id": "<value>",
     "version_id": "<value>",
@@ -495,7 +521,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.apis.delete_api(request={
     "api_id": "<value>",
@@ -529,13 +554,12 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.schemas.register_schema(request={
     "api_id": "<value>",
     "version_id": "<value>",
     "request_body": {
         "file": {
-            "content": open("<file_path>", "rb"),
+            "content": open("example.file", "rb"),
             "file_name": "your_file_here",
         },
     },
@@ -551,8 +575,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from speakeasy_client_sdk_python import Speakeasy
 import logging
