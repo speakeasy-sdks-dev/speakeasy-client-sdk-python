@@ -4,7 +4,7 @@ management:
   docChecksum: ef34c7c9a8d7b40707eaed604ee75276
   docVersion: 0.4.0 .
   speakeasyVersion: internal
-  generationVersion: 2.411.1
+  generationVersion: 2.411.0
   releaseVersion: 7.0.0-rc.1
   configChecksum: 352cb880812185e4b20ae9e7ae20962a
   repoURL: https://github.com/speakeasy-api/speakeasy-client-sdk-python.git
@@ -15,7 +15,7 @@ features:
   python:
     acceptHeaders: 3.0.0
     additionalDependencies: 1.0.0
-    core: 5.4.4
+    core: 5.4.3
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     downloadStreams: 1.0.1
@@ -768,6 +768,7 @@ examples:
   suggestOperationIDs:
     speakeasy-default-suggest-operation-I-ds:
       parameters:
+        query: {}
         header:
           x-session-id: "<value>"
       requestBody:
