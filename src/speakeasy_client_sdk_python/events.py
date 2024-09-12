@@ -204,12 +204,10 @@ class Events(BaseSDK):
     def get_workspace_targets(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceTargetsRequest,
-                operations.GetWorkspaceTargetsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceTargetsRequest,
+            operations.GetWorkspaceTargetsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -299,12 +297,10 @@ class Events(BaseSDK):
     async def get_workspace_targets_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceTargetsRequest,
-                operations.GetWorkspaceTargetsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceTargetsRequest,
+            operations.GetWorkspaceTargetsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -592,12 +588,10 @@ class Events(BaseSDK):
     def search_workspace_events(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.SearchWorkspaceEventsRequest,
-                operations.SearchWorkspaceEventsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.SearchWorkspaceEventsRequest,
+            operations.SearchWorkspaceEventsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -687,12 +681,10 @@ class Events(BaseSDK):
     async def search_workspace_events_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.SearchWorkspaceEventsRequest,
-                operations.SearchWorkspaceEventsRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.SearchWorkspaceEventsRequest,
+            operations.SearchWorkspaceEventsRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

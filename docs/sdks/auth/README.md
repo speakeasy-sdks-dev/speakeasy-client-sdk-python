@@ -108,7 +108,7 @@ s = Speakeasy(
     ),
 )
 
-res = s.auth.get_workspace_access()
+res = s.auth.get_workspace_access(request={})
 
 if res.access_details is not None:
     # handle response

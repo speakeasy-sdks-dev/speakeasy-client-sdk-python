@@ -119,7 +119,7 @@ res = s.reports.upload_report(request={
     "data": {},
     "file": {
         "content": open("example.file", "rb"),
-        "file_name": "your_file_here",
+        "file_name": "example.file",
     },
 })
 

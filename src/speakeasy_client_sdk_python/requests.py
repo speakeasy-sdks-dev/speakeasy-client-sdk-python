@@ -416,12 +416,9 @@ class Requests(BaseSDK):
     def query_event_log(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.QueryEventLogRequest,
-                operations.QueryEventLogRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.QueryEventLogRequest, operations.QueryEventLogRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -514,12 +511,9 @@ class Requests(BaseSDK):
     async def query_event_log_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.QueryEventLogRequest,
-                operations.QueryEventLogRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.QueryEventLogRequest, operations.QueryEventLogRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

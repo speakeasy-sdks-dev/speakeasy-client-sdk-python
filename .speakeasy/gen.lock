@@ -15,10 +15,11 @@ features:
   python:
     acceptHeaders: 3.0.0
     additionalDependencies: 1.0.0
-    core: 5.5.1
+    core: 5.5.2
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     downloadStreams: 1.0.1
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
     examples: 3.0.0
     globalSecurity: 3.0.2
@@ -478,6 +479,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 623581}
+        "200": {}
   getAllApiVersions:
     speakeasy-default-get-all-api-versions:
       parameters:
@@ -552,6 +554,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 786917}
+        "200": {}
   getAllApiEndpoints:
     speakeasy-default-get-all-api-endpoints:
       parameters:
@@ -653,6 +656,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 477436}
+        "200": {}
   downloadSchemaRevision:
     speakeasy-default-download-schema-revision:
       parameters:
@@ -663,6 +667,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 859820}
+        "200": {}
   getSchema:
     speakeasy-default-get-schema:
       parameters:
@@ -717,7 +722,7 @@ examples:
           apiID: "<value>"
           versionID: "<value>"
       requestBody:
-        multipart/form-data: {"file": {"": "your_file_here"}}
+        multipart/form-data: {"file": {"": "example.file"}}
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 822243}
@@ -732,6 +737,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 115307}
+        "200": {}
   getManifest:
     speakeasy-default-get-manifest:
       parameters:
@@ -797,6 +803,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 820828}
+        "200": {}
   getAccessToken:
     speakeasy-default-get-access-token:
       parameters:
@@ -834,6 +841,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 681461}
+        "200": {}
   getRequestFromEventLog:
     speakeasy-default-get-request-from-event-log:
       parameters:
@@ -893,6 +901,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 192607}
+        "200": {}
   getAction:
     speakeasy-default-get-action:
       parameters:
@@ -902,6 +911,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 252330}
+        "200": {}
   githubCheckPublishingSecrets:
     speakeasy-default-github-check-publishing-secrets:
       parameters:
@@ -910,6 +920,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 445560}
+        "200": {}
   githubStorePublishingSecrets:
     speakeasy-default-github-store-publishing-secrets:
       requestBody:
@@ -972,7 +983,7 @@ examples:
   uploadReport:
     speakeasy-default-upload-report:
       requestBody:
-        multipart/form-data: {"file": {"": "your_file_here"}}
+        multipart/form-data: {"file": {"": "example.file"}}
       responses:
         "200":
           application/json: {"url": "https://conventional-call.info"}
@@ -991,13 +1002,15 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 824447}
+        "200": {}
   suggestOperationIDs:
     speakeasy-default-suggest-operation-I-ds:
       parameters:
+        query: {}
         header:
           x-session-id: "<value>"
       requestBody:
-        multipart/form-data: {"schema": {"": "your_file_here"}}
+        multipart/form-data: {"schema": {"": "example.file"}}
       responses:
         "200":
           application/json: {"operation_ids": {"key": [], "key1": []}}

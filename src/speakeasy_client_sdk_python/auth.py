@@ -354,12 +354,10 @@ class Auth(BaseSDK):
     def get_workspace_access(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceAccessRequest,
-                operations.GetWorkspaceAccessRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceAccessRequest,
+            operations.GetWorkspaceAccessRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -448,12 +446,10 @@ class Auth(BaseSDK):
     async def get_workspace_access_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceAccessRequest,
-                operations.GetWorkspaceAccessRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceAccessRequest,
+            operations.GetWorkspaceAccessRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

@@ -212,7 +212,7 @@ s = Speakeasy(
     ),
 )
 
-res = s.apis.get_apis()
+res = s.apis.get_apis(request={})
 
 if res.apis is not None:
     # handle response

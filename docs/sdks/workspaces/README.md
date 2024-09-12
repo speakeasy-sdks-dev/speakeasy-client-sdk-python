@@ -23,7 +23,7 @@ s = Speakeasy(
     ),
 )
 
-res = s.workspaces.get_workspace()
+res = s.workspaces.get_workspace(request={})
 
 if res.workspace is not None:
     # handle response

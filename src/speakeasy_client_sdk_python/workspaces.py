@@ -12,11 +12,9 @@ class Workspaces(BaseSDK):
     def get_workspace(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceRequest, operations.GetWorkspaceRequestTypedDict
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceRequest, operations.GetWorkspaceRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -111,11 +109,9 @@ class Workspaces(BaseSDK):
     async def get_workspace_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetWorkspaceRequest, operations.GetWorkspaceRequestTypedDict
-            ]
-        ] = None,
+        request: Union[
+            operations.GetWorkspaceRequest, operations.GetWorkspaceRequestTypedDict
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

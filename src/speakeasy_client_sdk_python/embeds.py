@@ -14,12 +14,10 @@ class Embeds(BaseSDK):
     def get_embed_access_token(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetEmbedAccessTokenRequest,
-                operations.GetEmbedAccessTokenRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetEmbedAccessTokenRequest,
+            operations.GetEmbedAccessTokenRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -112,12 +110,10 @@ class Embeds(BaseSDK):
     async def get_embed_access_token_async(
         self,
         *,
-        request: Optional[
-            Union[
-                operations.GetEmbedAccessTokenRequest,
-                operations.GetEmbedAccessTokenRequestTypedDict,
-            ]
-        ] = None,
+        request: Union[
+            operations.GetEmbedAccessTokenRequest,
+            operations.GetEmbedAccessTokenRequestTypedDict,
+        ],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

@@ -786,9 +786,7 @@ class Apis(BaseSDK):
     def get_apis(
         self,
         *,
-        request: Optional[
-            Union[operations.GetApisRequest, operations.GetApisRequestTypedDict]
-        ] = None,
+        request: Union[operations.GetApisRequest, operations.GetApisRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -879,9 +877,7 @@ class Apis(BaseSDK):
     async def get_apis_async(
         self,
         *,
-        request: Optional[
-            Union[operations.GetApisRequest, operations.GetApisRequestTypedDict]
-        ] = None,
+        request: Union[operations.GetApisRequest, operations.GetApisRequestTypedDict],
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,

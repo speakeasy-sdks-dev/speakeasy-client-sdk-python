@@ -76,7 +76,7 @@ res = s.suggest.suggest_operation_i_ds(request={
     "request_body": {
         "schema_": {
             "content": open("example.file", "rb"),
-            "file_name": "your_file_here",
+            "file_name": "example.file",
         },
     },
 })

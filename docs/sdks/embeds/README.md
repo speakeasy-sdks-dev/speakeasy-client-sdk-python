@@ -28,7 +28,7 @@ s = Speakeasy(
     ),
 )
 
-res = s.embeds.get_embed_access_token()
+res = s.embeds.get_embed_access_token(request={})
 
 if res.embed_access_token_response is not None:
     # handle response

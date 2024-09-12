@@ -362,7 +362,7 @@ res = s.schemas.register_schema(request={
     "request_body": {
         "file": {
             "content": open("example.file", "rb"),
-            "file_name": "your_file_here",
+            "file_name": "example.file",
         },
     },
 })
