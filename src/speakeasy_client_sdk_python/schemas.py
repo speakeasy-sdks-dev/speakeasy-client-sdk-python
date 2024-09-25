@@ -97,7 +97,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -186,7 +186,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -289,7 +289,7 @@ class Schemas(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DownloadSchemaResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -393,7 +393,7 @@ class Schemas(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DownloadSchemaResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -498,7 +498,7 @@ class Schemas(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DownloadSchemaRevisionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -603,7 +603,7 @@ class Schemas(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DownloadSchemaRevisionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -697,7 +697,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -790,7 +790,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -882,7 +882,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaDiffResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -974,7 +974,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaDiffResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1068,7 +1068,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaRevisionResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1162,7 +1162,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemaRevisionResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1257,7 +1257,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemasResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1352,7 +1352,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetSchemasResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1451,7 +1451,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.RegisterSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1550,7 +1550,7 @@ class Schemas(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.RegisterSchemaResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,

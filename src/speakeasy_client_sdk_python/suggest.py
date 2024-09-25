@@ -114,7 +114,7 @@ class Suggest(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.ApplyOperationIDsResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -226,7 +226,7 @@ class Suggest(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.ApplyOperationIDsResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",

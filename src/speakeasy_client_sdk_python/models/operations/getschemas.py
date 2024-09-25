@@ -3,8 +3,10 @@
 from __future__ import annotations
 import httpx
 import pydantic
-from speakeasy_client_sdk_python.models.errors import error as errors_error
-from speakeasy_client_sdk_python.models.shared import schema as shared_schema
+from speakeasy_client_sdk_python.models.shared import (
+    error as shared_error,
+    schema as shared_schema,
+)
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import FieldMetadata, PathParamMetadata
 from typing import List, Optional, TypedDict
@@ -41,7 +43,7 @@ class GetSchemasResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
     classes: NotRequired[List[shared_schema.SchemaTypedDict]]
     r"""OK"""
@@ -57,7 +59,7 @@ class GetSchemasResponse(BaseModel):
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""
 
     classes: Optional[List[shared_schema.Schema]] = None

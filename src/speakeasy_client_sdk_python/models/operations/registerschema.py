@@ -4,7 +4,7 @@ from __future__ import annotations
 import httpx
 import io
 import pydantic
-from speakeasy_client_sdk_python.models.errors import error as errors_error
+from speakeasy_client_sdk_python.models.shared import error as shared_error
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import (
     FieldMetadata,
@@ -94,7 +94,7 @@ class RegisterSchemaResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -108,5 +108,5 @@ class RegisterSchemaResponse(BaseModel):
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

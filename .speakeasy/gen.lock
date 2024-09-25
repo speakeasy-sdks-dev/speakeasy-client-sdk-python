@@ -190,6 +190,8 @@ generatedFiles:
   - docs/models/shared/annotations.md
   - docs/models/shared/api.md
   - docs/models/shared/apiendpoint.md
+  - docs/models/shared/apiendpointinput.md
+  - docs/models/shared/apiinput.md
   - docs/models/shared/apikeydetails.md
   - docs/models/shared/auth.md
   - docs/models/shared/boundedrequest.md
@@ -198,6 +200,7 @@ generatedFiles:
   - docs/models/shared/depthstyle.md
   - docs/models/shared/embedaccesstokenresponse.md
   - docs/models/shared/embedtoken.md
+  - docs/models/shared/error.md
   - docs/models/shared/featureflag.md
   - docs/models/shared/filter_.md
   - docs/models/shared/filters.md
@@ -247,6 +250,7 @@ generatedFiles:
   - docs/models/shared/v2descriptor.md
   - docs/models/shared/valuechange.md
   - docs/models/shared/versionmetadata.md
+  - docs/models/shared/versionmetadatainput.md
   - docs/models/shared/workflowdocument.md
   - docs/models/shared/workspace.md
   - docs/models/shared/workspaces.md
@@ -377,6 +381,7 @@ generatedFiles:
   - src/speakeasy_client_sdk_python/models/shared/clievent.py
   - src/speakeasy_client_sdk_python/models/shared/embedaccesstokenresponse.py
   - src/speakeasy_client_sdk_python/models/shared/embedtoken.py
+  - src/speakeasy_client_sdk_python/models/shared/error.py
   - src/speakeasy_client_sdk_python/models/shared/featureflag.py
   - src/speakeasy_client_sdk_python/models/shared/filter_.py
   - src/speakeasy_client_sdk_python/models/shared/filters.py
@@ -479,6 +484,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 623581}
+        "200": {}
   getAllApiVersions:
     speakeasy-default-get-all-api-versions:
       parameters:
@@ -553,6 +559,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 786917}
+        "200": {}
   getAllApiEndpoints:
     speakeasy-default-get-all-api-endpoints:
       parameters:
@@ -654,6 +661,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 477436}
+        "200": {}
   downloadSchemaRevision:
     speakeasy-default-download-schema-revision:
       parameters:
@@ -664,6 +672,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 859820}
+        "200": {}
   getSchema:
     speakeasy-default-get-schema:
       parameters:
@@ -733,6 +742,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 115307}
+        "200": {}
   getManifest:
     speakeasy-default-get-manifest:
       parameters:
@@ -798,6 +808,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 820828}
+        "200": {}
   getAccessToken:
     speakeasy-default-get-access-token:
       parameters:
@@ -835,6 +846,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 681461}
+        "200": {}
   getRequestFromEventLog:
     speakeasy-default-get-request-from-event-log:
       parameters:
@@ -894,6 +906,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 192607}
+        "200": {}
   getAction:
     speakeasy-default-get-action:
       parameters:
@@ -903,6 +916,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 252330}
+        "200": {}
   githubCheckPublishingSecrets:
     speakeasy-default-github-check-publishing-secrets:
       parameters:
@@ -911,6 +925,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 445560}
+        "200": {}
   githubStorePublishingSecrets:
     speakeasy-default-github-store-publishing-secrets:
       requestBody:
@@ -992,9 +1007,11 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 824447}
+        "200": {}
   suggestOperationIDs:
     speakeasy-default-suggest-operation-I-ds:
       parameters:
+        query: {}
         header:
           x-session-id: "<value>"
       requestBody:

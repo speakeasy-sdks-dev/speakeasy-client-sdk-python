@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
 from speakeasy_client_sdk_python.models.shared import (
+    error as shared_error,
     getrevisionsresponse as shared_getrevisionsresponse,
 )
 from speakeasy_client_sdk_python.types import BaseModel
@@ -41,7 +41,7 @@ class GetRevisionsResponseTypedDict(TypedDict):
     r"""HTTP response status code for this operation"""
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
     get_revisions_response: NotRequired[
         shared_getrevisionsresponse.GetRevisionsResponseTypedDict
@@ -59,7 +59,7 @@ class GetRevisionsResponse(BaseModel):
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""
 
     get_revisions_response: Optional[

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
 from speakeasy_client_sdk_python.models.shared import (
     embedaccesstokenresponse as shared_embedaccesstokenresponse,
+    error as shared_error,
     filters as shared_filters,
 )
 from speakeasy_client_sdk_python.types import BaseModel
@@ -53,7 +53,7 @@ class GetEmbedAccessTokenResponseTypedDict(TypedDict):
         shared_embedaccesstokenresponse.EmbedAccessTokenResponseTypedDict
     ]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -72,5 +72,5 @@ class GetEmbedAccessTokenResponse(BaseModel):
     ] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

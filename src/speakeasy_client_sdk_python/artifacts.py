@@ -104,7 +104,7 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetBlobResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -199,7 +199,7 @@ class Artifacts(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetBlobResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -296,7 +296,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetManifestResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -392,7 +392,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetManifestResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -475,7 +475,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetNamespacesResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -558,7 +558,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetNamespacesResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -649,7 +649,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetOASSummaryResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -740,7 +740,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetOASSummaryResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -831,7 +831,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRevisionsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -922,7 +922,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRevisionsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1011,7 +1011,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetTagsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1100,7 +1100,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetTagsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1190,7 +1190,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PostTagsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1280,7 +1280,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PostTagsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1375,7 +1375,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PreflightResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1470,7 +1470,7 @@ class Artifacts(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.PreflightResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,

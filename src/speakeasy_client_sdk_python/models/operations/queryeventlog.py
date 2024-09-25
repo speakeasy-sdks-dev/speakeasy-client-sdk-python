@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
 from speakeasy_client_sdk_python.models.shared import (
     boundedrequest as shared_boundedrequest,
+    error as shared_error,
     filters as shared_filters,
 )
 from speakeasy_client_sdk_python.types import BaseModel
@@ -35,7 +35,7 @@ class QueryEventLogResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     bounded_requests: NotRequired[List[shared_boundedrequest.BoundedRequestTypedDict]]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -52,5 +52,5 @@ class QueryEventLogResponse(BaseModel):
     bounded_requests: Optional[List[shared_boundedrequest.BoundedRequest]] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

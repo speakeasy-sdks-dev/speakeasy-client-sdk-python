@@ -26,6 +26,7 @@ from .embedaccesstokenresponse import (
     EmbedAccessTokenResponseTypedDict,
 )
 from .embedtoken import EmbedToken, EmbedTokenTypedDict
+from .error import Error, ErrorTypedDict
 from .featureflag import FeatureFlag, FeatureFlagTypedDict
 from .filter_ import Filter, FilterTypedDict
 from .filters import Filters, FiltersTypedDict
@@ -155,6 +156,8 @@ __all__ = [
     "EmbedAccessTokenResponseTypedDict",
     "EmbedToken",
     "EmbedTokenTypedDict",
+    "Error",
+    "ErrorTypedDict",
     "FeatureFlag",
     "FeatureFlagTypedDict",
     "Filter",

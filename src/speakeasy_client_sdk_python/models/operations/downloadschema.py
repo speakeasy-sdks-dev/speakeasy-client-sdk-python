@@ -3,7 +3,7 @@
 from __future__ import annotations
 import httpx
 import pydantic
-from speakeasy_client_sdk_python.models.errors import error as errors_error
+from speakeasy_client_sdk_python.models.shared import error as shared_error
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import FieldMetadata, PathParamMetadata
 from typing import Optional, TypedDict
@@ -44,7 +44,7 @@ class DownloadSchemaResponseTypedDict(TypedDict):
     r"""OK"""
     two_hundred_application_x_yaml_schema: NotRequired[httpx.Response]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -64,5 +64,5 @@ class DownloadSchemaResponse(BaseModel):
     two_hundred_application_x_yaml_schema: Optional[httpx.Response] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

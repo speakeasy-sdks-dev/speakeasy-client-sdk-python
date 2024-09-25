@@ -87,7 +87,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -177,7 +177,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -270,7 +270,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -363,7 +363,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -463,7 +463,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.InsertVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -563,7 +563,7 @@ class Metadata(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.InsertVersionMetadataResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,

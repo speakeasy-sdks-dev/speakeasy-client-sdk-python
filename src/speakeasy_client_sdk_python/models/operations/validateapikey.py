@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
 from speakeasy_client_sdk_python.models.shared import (
     apikeydetails as shared_apikeydetails,
+    error as shared_error,
 )
 from speakeasy_client_sdk_python.types import BaseModel
 from typing import Optional, TypedDict
@@ -20,7 +20,7 @@ class ValidateAPIKeyResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     api_key_details: NotRequired[shared_apikeydetails.APIKeyDetailsTypedDict]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -37,5 +37,5 @@ class ValidateAPIKeyResponse(BaseModel):
     api_key_details: Optional[shared_apikeydetails.APIKeyDetails] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

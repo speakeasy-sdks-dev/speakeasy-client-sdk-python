@@ -94,7 +94,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteAPIResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -185,7 +185,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteAPIResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -281,7 +281,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateOpenAPISpecResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -377,7 +377,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateOpenAPISpecResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -478,7 +478,7 @@ class Apis(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GeneratePostmanCollectionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -580,7 +580,7 @@ class Apis(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GeneratePostmanCollectionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -675,7 +675,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllAPIVersionsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -769,7 +769,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllAPIVersionsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -860,7 +860,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetApisResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -951,7 +951,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetApisResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1047,7 +1047,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.UpsertAPIResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1143,7 +1143,7 @@ class Apis(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.UpsertAPIResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,

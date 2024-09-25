@@ -3,8 +3,10 @@
 from __future__ import annotations
 import httpx
 import pydantic
-from speakeasy_client_sdk_python.models.errors import error as errors_error
-from speakeasy_client_sdk_python.models.shared import api as shared_api
+from speakeasy_client_sdk_python.models.shared import (
+    api as shared_api,
+    error as shared_error,
+)
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import (
     FieldMetadata,
@@ -68,7 +70,7 @@ class GetAllAPIVersionsResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     apis: NotRequired[List[shared_api.APITypedDict]]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -85,5 +87,5 @@ class GetAllAPIVersionsResponse(BaseModel):
     apis: Optional[List[shared_api.API]] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

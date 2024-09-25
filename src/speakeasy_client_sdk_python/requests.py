@@ -107,7 +107,7 @@ class Requests(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateRequestPostmanCollectionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -212,7 +212,7 @@ class Requests(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateRequestPostmanCollectionResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -306,7 +306,7 @@ class Requests(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRequestFromEventLogResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -399,7 +399,7 @@ class Requests(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetRequestFromEventLogResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -494,7 +494,7 @@ class Requests(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.QueryEventLogResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -589,7 +589,7 @@ class Requests(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.QueryEventLogResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,

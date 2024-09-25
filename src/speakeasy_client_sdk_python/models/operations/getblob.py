@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
+from speakeasy_client_sdk_python.models.shared import error as shared_error
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import FieldMetadata, PathParamMetadata
 from typing import Optional, TypedDict
@@ -43,7 +43,7 @@ class GetBlobResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     blob: NotRequired[httpx.Response]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
 
 
@@ -60,5 +60,5 @@ class GetBlobResponse(BaseModel):
     blob: Optional[httpx.Response] = None
     r"""OK"""
 
-    error: Optional[errors_error.Error] = None
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""

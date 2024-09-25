@@ -95,7 +95,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -187,7 +187,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.DeleteAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -283,7 +283,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.FindAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -379,7 +379,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.FindAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -477,7 +477,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateOpenAPISpecForAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -575,7 +575,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GenerateOpenAPISpecForAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -680,7 +680,7 @@ class APIEndpoints(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GeneratePostmanCollectionForAPIEndpointResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -786,7 +786,7 @@ class APIEndpoints(BaseSDK):
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GeneratePostmanCollectionForAPIEndpointResponse(
                 error=utils.unmarshal_json(
-                    utils.stream_to_text(http_res), Optional[errors.Error]
+                    utils.stream_to_text(http_res), Optional[shared.Error]
                 ),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
@@ -880,7 +880,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllAPIEndpointsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -973,7 +973,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllAPIEndpointsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1068,7 +1068,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllForVersionAPIEndpointsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1163,7 +1163,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAllForVersionAPIEndpointsResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1255,7 +1255,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1347,7 +1347,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.GetAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1445,7 +1445,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.UpsertAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
@@ -1543,7 +1543,7 @@ class APIEndpoints(BaseSDK):
             )
         if utils.match_response(http_res, "default", "application/json"):
             return operations.UpsertAPIEndpointResponse(
-                error=utils.unmarshal_json(http_res.text, Optional[errors.Error]),
+                error=utils.unmarshal_json(http_res.text, Optional[shared.Error]),
                 status_code=http_res.status_code,
                 content_type=http_res.headers.get("Content-Type") or "",
                 raw_response=http_res,
