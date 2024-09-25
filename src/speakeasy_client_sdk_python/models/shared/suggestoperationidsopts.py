@@ -13,16 +13,18 @@ class DepthStyle(str, Enum):
     NESTED = "nested"
     DEEP = "deep"
 
+
 class Style(str, Enum):
     STANDARDIZE = "standardize"
     RESOURCE = "resource"
 
+
 class SuggestOperationIDsOptsTypedDict(TypedDict):
     depth_style: NotRequired[DepthStyle]
     style: NotRequired[Style]
-    
+
 
 class SuggestOperationIDsOpts(BaseModel):
     depth_style: Optional[DepthStyle] = None
+
     style: Optional[Style] = None
-    

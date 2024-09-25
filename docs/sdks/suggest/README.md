@@ -27,7 +27,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.suggest.apply_operation_i_ds(request={
     "x_session_id": "<value>",
 })
@@ -45,15 +44,16 @@ if res.two_hundred_application_json_schema is not None:
 | `request`                                                                                  | [operations.ApplyOperationIDsRequest](../../models/operations/applyoperationidsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `retries`                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                           | :heavy_minus_sign:                                                                         | Configuration to override the default retry behavior of the client.                        |
 
-
 ### Response
 
 **[operations.ApplyOperationIDsResponse](../../models/operations/applyoperationidsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## suggest_operation_i_ds
 
@@ -71,13 +71,12 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.suggest.suggest_operation_i_ds(request={
     "x_session_id": "<value>",
     "request_body": {
         "schema_": {
-            "content": open("<file_path>", "rb"),
-            "file_name": "your_file_here",
+            "content": open("example.file", "rb"),
+            "file_name": "example.file",
         },
     },
 })
@@ -95,15 +94,16 @@ if res.suggested_operation_i_ds is not None:
 | `request`                                                                                      | [operations.SuggestOperationIDsRequest](../../models/operations/suggestoperationidsrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `retries`                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                               | :heavy_minus_sign:                                                                             | Configuration to override the default retry behavior of the client.                            |
 
-
 ### Response
 
 **[operations.SuggestOperationIDsResponse](../../models/operations/suggestoperationidsresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
+
 
 ## suggest_operation_i_ds_registry
 
@@ -120,7 +120,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.suggest.suggest_operation_i_ds_registry(request={
     "x_session_id": "<value>",
@@ -141,10 +140,10 @@ if res.suggested_operation_i_ds is not None:
 | `request`                                                                                                      | [operations.SuggestOperationIDsRegistryRequest](../../models/operations/suggestoperationidsregistryrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 | `retries`                                                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                               | :heavy_minus_sign:                                                                                             | Configuration to override the default retry behavior of the client.                                            |
 
-
 ### Response
 
 **[operations.SuggestOperationIDsRegistryResponse](../../models/operations/suggestoperationidsregistryresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

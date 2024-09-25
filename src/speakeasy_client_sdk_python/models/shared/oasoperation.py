@@ -11,12 +11,15 @@ class OASOperationTypedDict(TypedDict):
     operation_id: str
     path: str
     tags: List[str]
-    
+
 
 class OASOperation(BaseModel):
     description: str
+
     method: str
+
     operation_id: str
+
     path: str
+
     tags: List[str]
-    

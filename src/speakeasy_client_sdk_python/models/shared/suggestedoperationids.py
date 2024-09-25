@@ -7,8 +7,7 @@ from typing import Dict, List, TypedDict
 
 class SuggestedOperationIDsTypedDict(TypedDict):
     operation_ids: Dict[str, List[str]]
-    
+
 
 class SuggestedOperationIDs(BaseModel):
     operation_ids: Dict[str, List[str]]
-    
