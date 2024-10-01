@@ -38,6 +38,7 @@ features:
     uploadStreams: 1.0.0
 generatedFiles:
   - .gitattributes
+  - .python-version
   - .vscode/settings.json
   - CONTRIBUTING.md
   - USAGE.md
@@ -484,6 +485,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 623581}
+        "200": {}
   getAllApiVersions:
     speakeasy-default-get-all-api-versions:
       parameters:
@@ -558,6 +560,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 786917}
+        "200": {}
   getAllApiEndpoints:
     speakeasy-default-get-all-api-endpoints:
       parameters:
@@ -659,6 +662,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 477436}
+        "200": {}
   downloadSchemaRevision:
     speakeasy-default-download-schema-revision:
       parameters:
@@ -669,6 +673,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 859820}
+        "200": {}
   getSchema:
     speakeasy-default-get-schema:
       parameters:
@@ -738,6 +743,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 115307}
+        "200": {}
   getManifest:
     speakeasy-default-get-manifest:
       parameters:
@@ -803,6 +809,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 820828}
+        "200": {}
   getAccessToken:
     speakeasy-default-get-access-token:
       parameters:
@@ -840,6 +847,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 681461}
+        "200": {}
   getRequestFromEventLog:
     speakeasy-default-get-request-from-event-log:
       parameters:
@@ -899,6 +907,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 192607}
+        "200": {}
   getAction:
     speakeasy-default-get-action:
       parameters:
@@ -908,6 +917,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 252330}
+        "200": {}
   githubCheckPublishingSecrets:
     speakeasy-default-github-check-publishing-secrets:
       parameters:
@@ -916,6 +926,7 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 445560}
+        "200": {}
   githubStorePublishingSecrets:
     speakeasy-default-github-store-publishing-secrets:
       requestBody:
@@ -997,9 +1008,11 @@ examples:
       responses:
         default:
           application/json: {"message": "<value>", "status_code": 824447}
+        "200": {}
   suggestOperationIDs:
     speakeasy-default-suggest-operation-I-ds:
       parameters:
+        query: {}
         header:
           x-session-id: "<id>"
       requestBody:
