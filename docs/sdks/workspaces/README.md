@@ -1,6 +1,8 @@
 # Workspaces
 (*workspaces*)
 
+## Overview
+
 ### Available Operations
 
 * [get_workspace](#get_workspace) - Get workspace
@@ -21,8 +23,7 @@ s = Speakeasy(
     ),
 )
 
-
-res = s.workspaces.get_workspace()
+res = s.workspaces.get_workspace(request={})
 
 if res.workspace is not None:
     # handle response
@@ -37,12 +38,12 @@ if res.workspace is not None:
 | `request`                                                                        | [operations.GetWorkspaceRequest](../../models/operations/getworkspacerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 | `retries`                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                 | :heavy_minus_sign:                                                               | Configuration to override the default retry behavior of the client.              |
 
-
 ### Response
 
 **[operations.GetWorkspaceResponse](../../models/operations/getworkspaceresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

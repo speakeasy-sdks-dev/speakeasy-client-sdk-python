@@ -3,13 +3,13 @@
 from __future__ import annotations
 from datetime import datetime
 from speakeasy_client_sdk_python.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class WorkspaceTypedDict(TypedDict):
     r"""A speakeasy workspace"""
-    
+
     created_at: datetime
     id: str
     name: str
@@ -20,19 +20,27 @@ class WorkspaceTypedDict(TypedDict):
     verified: bool
     oci_repo: NotRequired[str]
     oci_repo_created_at: NotRequired[datetime]
-    
+
 
 class Workspace(BaseModel):
     r"""A speakeasy workspace"""
-    
+
     created_at: datetime
+
     id: str
+
     name: str
+
     organization_id: str
+
     slug: str
+
     telemetry_disabled: bool
+
     updated_at: datetime
+
     verified: bool
+
     oci_repo: Optional[str] = None
+
     oci_repo_created_at: Optional[datetime] = None
-    

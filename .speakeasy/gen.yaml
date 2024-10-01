@@ -19,8 +19,11 @@ python:
   clientServerStatusCodesAsErrors: true
   description: Speakeasy API Client SDK for Python
   enumFormat: enum
+  fixFlags:
+    responseRequiredSep2024: false
   flattenGlobalSecurity: false
   flattenRequests: false
+  flatteningOrder: parameters-first
   imports:
     option: openapi
     paths:

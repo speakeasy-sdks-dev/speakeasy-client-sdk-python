@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
-from speakeasy_client_sdk_python.models.shared import embedtoken as shared_embedtoken
+from speakeasy_client_sdk_python.models.shared import (
+    embedtoken as shared_embedtoken,
+    error as shared_error,
+)
 from speakeasy_client_sdk_python.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class GetValidEmbedAccessTokensResponseTypedDict(TypedDict):
@@ -18,19 +20,22 @@ class GetValidEmbedAccessTokensResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     embed_tokens: NotRequired[List[shared_embedtoken.EmbedTokenTypedDict]]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
-    
+
 
 class GetValidEmbedAccessTokensResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     embed_tokens: Optional[List[shared_embedtoken.EmbedToken]] = None
     r"""OK"""
-    error: Optional[errors_error.Error] = None
+
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""
-    

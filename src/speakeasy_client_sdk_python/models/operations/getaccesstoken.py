@@ -2,23 +2,27 @@
 
 from __future__ import annotations
 import httpx
-from speakeasy_client_sdk_python.models.errors import error as errors_error
-from speakeasy_client_sdk_python.models.shared import accesstoken as shared_accesstoken
+from speakeasy_client_sdk_python.models.shared import (
+    accesstoken as shared_accesstoken,
+    error as shared_error,
+)
 from speakeasy_client_sdk_python.types import BaseModel
 from speakeasy_client_sdk_python.utils import FieldMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetAccessTokenRequestTypedDict(TypedDict):
     workspace_id: str
     r"""The workspace ID"""
-    
+
 
 class GetAccessTokenRequest(BaseModel):
-    workspace_id: Annotated[str, FieldMetadata(query=QueryParamMetadata(style="form", explode=True))]
+    workspace_id: Annotated[
+        str, FieldMetadata(query=QueryParamMetadata(style="form", explode=True))
+    ]
     r"""The workspace ID"""
-    
+
 
 class GetAccessTokenResponseTypedDict(TypedDict):
     content_type: str
@@ -29,19 +33,22 @@ class GetAccessTokenResponseTypedDict(TypedDict):
     r"""Raw HTTP response; suitable for custom response parsing"""
     access_token: NotRequired[shared_accesstoken.AccessTokenTypedDict]
     r"""OK"""
-    error: NotRequired[errors_error.Error]
+    error: NotRequired[shared_error.ErrorTypedDict]
     r"""Default error response"""
-    
+
 
 class GetAccessTokenResponse(BaseModel):
     content_type: str
     r"""HTTP response content type for this operation"""
+
     status_code: int
     r"""HTTP response status code for this operation"""
+
     raw_response: httpx.Response
     r"""Raw HTTP response; suitable for custom response parsing"""
+
     access_token: Optional[shared_accesstoken.AccessToken] = None
     r"""OK"""
-    error: Optional[errors_error.Error] = None
+
+    error: Optional[shared_error.Error] = None
     r"""Default error response"""
-    

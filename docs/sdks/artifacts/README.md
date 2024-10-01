@@ -32,7 +32,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.artifacts.get_blob(request={
     "organization_slug": "<value>",
     "workspace_slug": "<value>",
@@ -53,15 +52,15 @@ if res.blob is not None:
 | `request`                                                              | [operations.GetBlobRequest](../../models/operations/getblobrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 | `retries`                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)       | :heavy_minus_sign:                                                     | Configuration to override the default retry behavior of the client.    |
 
-
 ### Response
 
 **[operations.GetBlobResponse](../../models/operations/getblobresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_manifest
 
@@ -78,7 +77,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.artifacts.get_manifest(request={
     "organization_slug": "<value>",
@@ -100,15 +98,15 @@ if res.manifest is not None:
 | `request`                                                                      | [operations.GetManifestRequest](../../models/operations/getmanifestrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 | `retries`                                                                      | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)               | :heavy_minus_sign:                                                             | Configuration to override the default retry behavior of the client.            |
 
-
 ### Response
 
 **[operations.GetManifestResponse](../../models/operations/getmanifestresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_namespaces
 
@@ -126,7 +124,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.artifacts.get_namespaces()
 
 if res.get_namespaces_response is not None:
@@ -141,15 +138,15 @@ if res.get_namespaces_response is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.GetNamespacesResponse](../../models/operations/getnamespacesresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_oas_summary
 
@@ -164,7 +161,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.artifacts.get_oas_summary(request={
     "namespace_name": "<value>",
@@ -184,15 +180,15 @@ if res.oas_summary is not None:
 | `request`                                                                          | [operations.GetOASSummaryRequest](../../models/operations/getoassummaryrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 | `retries`                                                                          | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                   | :heavy_minus_sign:                                                                 | Configuration to override the default retry behavior of the client.                |
 
-
 ### Response
 
 **[operations.GetOASSummaryResponse](../../models/operations/getoassummaryresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_revisions
 
@@ -207,7 +203,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.artifacts.get_revisions(request={
     "namespace_name": "<value>",
@@ -226,15 +221,15 @@ if res.get_revisions_response is not None:
 | `request`                                                                        | [operations.GetRevisionsRequest](../../models/operations/getrevisionsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 | `retries`                                                                        | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                 | :heavy_minus_sign:                                                               | Configuration to override the default retry behavior of the client.              |
 
-
 ### Response
 
 **[operations.GetRevisionsResponse](../../models/operations/getrevisionsresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_tags
 
@@ -249,7 +244,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.artifacts.get_tags(request={
     "namespace_name": "<value>",
@@ -268,15 +262,15 @@ if res.get_tags_response is not None:
 | `request`                                                              | [operations.GetTagsRequest](../../models/operations/gettagsrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 | `retries`                                                              | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)       | :heavy_minus_sign:                                                     | Configuration to override the default retry behavior of the client.    |
 
-
 ### Response
 
 **[operations.GetTagsResponse](../../models/operations/gettagsresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## post_tags
 
@@ -293,7 +287,6 @@ s = Speakeasy(
         api_key="<YOUR_API_KEY_HERE>",
     ),
 )
-
 
 res = s.artifacts.post_tags(request={
     "namespace_name": "<value>",
@@ -312,15 +305,15 @@ if res is not None:
 | `request`                                                                | [operations.PostTagsRequest](../../models/operations/posttagsrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 | `retries`                                                                | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)         | :heavy_minus_sign:                                                       | Configuration to override the default retry behavior of the client.      |
 
-
 ### Response
 
 **[operations.PostTagsResponse](../../models/operations/posttagsresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## preflight
 
@@ -338,7 +331,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.artifacts.preflight()
 
 if res.preflight_token is not None:
@@ -354,12 +346,12 @@ if res.preflight_token is not None:
 | `request`                                                           | [shared.PreflightRequest](../../models/shared/preflightrequest.md)  | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.PreflightResponse](../../models/operations/preflightresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

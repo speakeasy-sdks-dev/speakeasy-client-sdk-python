@@ -23,9 +23,8 @@ from speakeasy_client_sdk_python import Speakeasy
 
 s = Speakeasy()
 
-
 res = s.auth.get_access_token(request={
-    "workspace_id": "<value>",
+    "workspace_id": "<id>",
 })
 
 if res.access_token is not None:
@@ -41,15 +40,15 @@ if res.access_token is not None:
 | `request`                                                                            | [operations.GetAccessTokenRequest](../../models/operations/getaccesstokenrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 | `retries`                                                                            | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                     | :heavy_minus_sign:                                                                   | Configuration to override the default retry behavior of the client.                  |
 
-
 ### Response
 
 **[operations.GetAccessTokenResponse](../../models/operations/getaccesstokenresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_user
 
@@ -67,7 +66,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.auth.get_user()
 
 if res.user is not None:
@@ -82,15 +80,15 @@ if res.user is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.GetUserResponse](../../models/operations/getuserresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_workspace_access
 
@@ -108,8 +106,7 @@ s = Speakeasy(
     ),
 )
 
-
-res = s.auth.get_workspace_access()
+res = s.auth.get_workspace_access(request={})
 
 if res.access_details is not None:
     # handle response
@@ -124,15 +121,15 @@ if res.access_details is not None:
 | `request`                                                                                    | [operations.GetWorkspaceAccessRequest](../../models/operations/getworkspaceaccessrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `retries`                                                                                    | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                             | :heavy_minus_sign:                                                                           | Configuration to override the default retry behavior of the client.                          |
 
-
 ### Response
 
 **[operations.GetWorkspaceAccessResponse](../../models/operations/getworkspaceaccessresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## validate_api_key
 
@@ -150,7 +147,6 @@ s = Speakeasy(
     ),
 )
 
-
 res = s.auth.validate_api_key()
 
 if res.api_key_details is not None:
@@ -165,12 +161,12 @@ if res.api_key_details is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[operations.ValidateAPIKeyResponse](../../models/operations/validateapikeyresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

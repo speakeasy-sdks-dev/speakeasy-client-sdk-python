@@ -3,8 +3,8 @@
 from __future__ import annotations
 from enum import Enum
 from speakeasy_client_sdk_python.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class DepthStyle(str, Enum):
@@ -13,16 +13,18 @@ class DepthStyle(str, Enum):
     NESTED = "nested"
     DEEP = "deep"
 
+
 class Style(str, Enum):
     STANDARDIZE = "standardize"
     RESOURCE = "resource"
 
+
 class SuggestOperationIDsOptsTypedDict(TypedDict):
     depth_style: NotRequired[DepthStyle]
     style: NotRequired[Style]
-    
+
 
 class SuggestOperationIDsOpts(BaseModel):
     depth_style: Optional[DepthStyle] = None
+
     style: Optional[Style] = None
-    

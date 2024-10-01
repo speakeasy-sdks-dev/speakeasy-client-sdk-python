@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 from speakeasy_client_sdk_python.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class GithubTriggerActionRequestTypedDict(TypedDict):
     r"""A request to trigger an action on a GitHub target"""
-    
+
     gen_lock_id: str
     r"""The generation lock ID"""
     org: str
@@ -19,19 +19,22 @@ class GithubTriggerActionRequestTypedDict(TypedDict):
     r"""A version to override the SDK too in workflow dispatch"""
     target_name: NotRequired[str]
     r"""The target name for the action"""
-    
+
 
 class GithubTriggerActionRequest(BaseModel):
     r"""A request to trigger an action on a GitHub target"""
-    
+
     gen_lock_id: str
     r"""The generation lock ID"""
+
     org: str
     r"""The GitHub organization name"""
+
     repo_name: str
     r"""The GitHub repository name"""
+
     set_version: Optional[str] = None
     r"""A version to override the SDK too in workflow dispatch"""
+
     target_name: Optional[str] = None
     r"""The target name for the action"""
-    
